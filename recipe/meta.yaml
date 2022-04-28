@@ -29,6 +29,7 @@ requirements:
     - nodejs
     - polib
     - python >=3.6
+    - setuptools
 
 test:
   commands:
