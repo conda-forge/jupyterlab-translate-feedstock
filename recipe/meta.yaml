@@ -1,13 +1,13 @@
 {% set name = "jupyterlab-translate" %}
-{% set version = "1.1.0" %}
-{% set hash = "015395b3af23921f1a3e7972e7cf8750c1078f3d77af5022e5daf58638622d95" %}
+{% set version = "1.2.0" %}
+{% set hash = "402e38069ee767025c299d3faaad4c4aa4a8fbb41e2f0c650fcd635f0bb297a1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
   sha256: {{ hash }}
 
 build:
@@ -22,17 +22,24 @@ requirements:
   host:
     - pip
     - python >=3.6
+    - hatchling >=1.5.0
   run:
     - babel
     - click
     - cookiecutter
+    - crowdin-api-client
+    - importlib_metadata
+    - hatchling >=1.5.0
     - nodejs
     - polib
     - python >=3.6
-    - setuptools
+    - requests
 
 test:
+  requires:
+    - pip
   commands:
+    - pip check
     # The 'compiled' shipped version ends with an error - skipping it
     # - gettext-extract --help
     - jupyterlab-translate --help
