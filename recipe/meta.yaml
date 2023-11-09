@@ -1,6 +1,6 @@
 {% set name = "jupyterlab-translate" %}
-{% set version = "1.3.3" %}
-{% set hash = "90bb0a0586e5e317432a05d9fe05918bd869c59ae9356cf3557b8f0f2eddfa45" %}
+{% set version = "1.3.4" %}
+{% set hash = "418948f2036382e3f456c79e8716a2d90289c8f3b2758d45edeb3b0ba5877dbe" %}
 
 package:
   name: {{ name|lower }}
@@ -40,6 +40,8 @@ requirements:
 test:
   requires:
     - pip
+    # Constrain to fix pip check
+    - pydantic <=2.0.0
   commands:
     - pip check
     # The 'compiled' shipped version ends with an error - skipping it
