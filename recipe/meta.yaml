@@ -40,6 +40,8 @@ requirements:
 test:
   requires:
     - pip
+    # Constrain to fix pip check
+    - pydantic <=2.0.0
   commands:
     - pip check
     # The 'compiled' shipped version ends with an error - skipping it
