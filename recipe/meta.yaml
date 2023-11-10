@@ -1,6 +1,6 @@
 {% set name = "jupyterlab-translate" %}
-{% set version = "1.3.4" %}
-{% set hash = "418948f2036382e3f456c79e8716a2d90289c8f3b2758d45edeb3b0ba5877dbe" %}
+{% set version = "1.3.5" %}
+{% set hash = "4954fb5fb928ae272d33facd81e30e3aab48a569b00596e82775b5850a7c4c89" %}
 
 package:
   name: {{ name|lower }}
