@@ -27,7 +27,7 @@ requirements:
     - importlib_metadata
     - babel
     - click
-    - copier >=7.0.0
+    - copier >=9.2.0
     - copier-templates-extensions
     - crowdin-api-client
     - hatchling >=1.5.0
@@ -40,8 +40,6 @@ requirements:
 test:
   requires:
     - pip
-    # Constrain to fix pip check
-    - pydantic <=2.0.0
   commands:
     - pip check
     # The 'compiled' shipped version ends with an error - skipping it
