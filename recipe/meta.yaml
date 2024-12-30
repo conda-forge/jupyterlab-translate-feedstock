@@ -7,12 +7,12 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
   sha256: {{ hash }}
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - jupyterlab-translate = jupyterlab_translate.cli:main
@@ -21,7 +21,7 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.7
+    - python {{ python_min }}
     - hatchling >=1.5.0
   run:
     - importlib_metadata
@@ -34,12 +34,13 @@ requirements:
     - jinja2-time
     - nodejs
     - polib
-    - python >=3.7
+    - python >={{ python_min }}
     - requests
 
 test:
   requires:
     - pip
+    - python {{ python_min }}
   commands:
     - pip check
     # The 'compiled' shipped version ends with an error - skipping it
