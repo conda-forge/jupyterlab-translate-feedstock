@@ -24,7 +24,7 @@ requirements:
     - python {{ python_min }}
     - hatchling >=1.5.0
   run:
-    - importlib_metadata
+    - importlib-metadata
     - babel
     - click
     - copier >=9.2.0
